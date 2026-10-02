@@ -1,0 +1,12 @@
+{
+  "checked_selection_sha256": "674f0e1a99727e5bb51ca6b93f743ee7baac951db69450471cd1d6f59d8c46eb",
+  "checks": {
+    "all_split_counts_and_eligibility_unchanged": true,
+    "causal_row_ids": true,
+    "records": true,
+    "tolerances": true
+  },
+  "original_selection_sha256": "4d6a1308292696b8e1da6a7f88c6492fe6a97c9428598f1d0c8bcfd54188b287",
+  "passed": true,
+  "scope": "Post-run structural hardening only; no new guard inference and no sample replacement."
+}

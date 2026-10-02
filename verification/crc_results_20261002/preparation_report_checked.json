@@ -1,0 +1,196 @@
+{
+  "all_splits_present": true,
+  "causal_response_tokens": [
+    24,
+    50
+  ],
+  "cross_split_prompt_group_counts_before_dedup": {
+    "dev+test": 134,
+    "train+dev": 1237,
+    "train+dev+test": 43,
+    "train+test": 1233
+  },
+  "deduplication_scope": "Only structurally and token-eligible rows, with test > dev > train priority.",
+  "limitations": [
+    "Reason counts are independent and can overlap.",
+    "Near duplicates and inherited contamination are not detected.",
+    "Eligibility filtering changes composition; this pilot does not establish task performance or population risk."
+  ],
+  "metadata": {
+    "causal_selection": "Two shortest response-token sequences with at least two tokens within the unchanged selected sample; ties by row_id.",
+    "context_limit": 8192,
+    "dataset_revision": "e20a087e2ec0c5550f2a53a508503bb9a6741752",
+    "label_evidence_supplied_by_caller": "FineHarm pinned card and SCM b0e4ab48011a0441767fbbd3537266498e874eeb utils/data_process.py; raw train/dev sanity verified before original inference. 0=benign,1=harmful. This re-audit strengthens decoded-segment boundary validation without consulting guard outputs for selection.",
+    "label_mapping": {
+      "int:0": 0,
+      "int:1": 1
+    },
+    "model_revision": "74e1479150e9029d6778993f00491108323bb6f8",
+    "sample_rule": "Lowest SHA256 of JSON [fixed_seed,row_id]; no guard outputs consulted.",
+    "sample_seed": "openrsi-fineharm-dev-plumbing-v1",
+    "sample_size": 32,
+    "selected_row_ids_sha256": "865655378c185b07b768e2b3b394e75661b6056899a79d81156ea01803b60637",
+    "serializer": "Pinned user generation prefix + verbatim canonical response + <|im_end|>\\n."
+  },
+  "preparation_seconds": 67.90593779599294,
+  "preparation_version": 1,
+  "sample_classes": {
+    "benign": 17,
+    "harmful": 15
+  },
+  "sample_input_tokens": 12611,
+  "sample_response_tokens": 10106,
+  "scope": "All-split structure/token eligibility and exact normalized-prompt deduplication; no guard inference or policy training.",
+  "selected_dev_file_sha256": "674f0e1a99727e5bb51ca6b93f743ee7baac951db69450471cd1d6f59d8c46eb",
+  "serializer_checks": {
+    "case_count": 4,
+    "literal_delimiter_content": true,
+    "ordinary_template_equivalence": true,
+    "synthetic_boundary_exclusion_count": 1,
+    "unicode_offsets": true,
+    "verbatim_newline_think_preservation": true
+  },
+  "splits": {
+    "dev": {
+      "deduplication_reason_counts": {
+        "split_priority_excluded": 179
+      },
+      "eligible_input_tokens_before_dedup": 1224639,
+      "file_name": "FineHarm-val.json",
+      "outer_schema": {
+        "type": "list"
+      },
+      "raw_rows": 2906,
+      "raw_sentence_label_classes": {
+        "benign": 1624,
+        "harmful": 1282
+      },
+      "raw_word_label_classes": {
+        "benign": 1626,
+        "harmful": 1280
+      },
+      "retained_classes": {
+        "benign": 1492,
+        "harmful": 1205
+      },
+      "retained_input_tokens": 1158561,
+      "retained_response_tokens": 884555,
+      "retained_row_ids_sha256": "232e62d250ed3308d2500b1e62ec29c0a9ea6a50cc5ae2372a8f296c86ba1b2d",
+      "retained_rows": 2697,
+      "sha256": "9a7664d617c59534cca64d1cca79b38e4e5eb2992fbb6e26a6247d6c8ee2588d",
+      "structural_excluded_rows": 30,
+      "structural_reason_counts": {
+        "sentence_word_label_disagreement": 22,
+        "uncovered_nonwhitespace_between_words": 4,
+        "word_not_found_in_order": 4
+      },
+      "structurally_eligible_classes": {
+        "benign": 1622,
+        "harmful": 1254
+      },
+      "token_eligible_classes_before_dedup": {
+        "benign": 1622,
+        "harmful": 1254
+      },
+      "token_excluded_rows": 0,
+      "token_reason_counts": {}
+    },
+    "test": {
+      "deduplication_reason_counts": {},
+      "eligible_input_tokens_before_dedup": 1236567,
+      "file_name": "FineHarm-test.json",
+      "outer_schema": {
+        "type": "list"
+      },
+      "raw_rows": 2907,
+      "raw_sentence_label_classes": {
+        "benign": 1624,
+        "harmful": 1283
+      },
+      "raw_word_label_classes": {
+        "benign": 1625,
+        "harmful": 1282
+      },
+      "retained_classes": {
+        "benign": 1623,
+        "harmful": 1239
+      },
+      "retained_input_tokens": 1236567,
+      "retained_response_tokens": 953153,
+      "retained_row_ids_sha256": "dcb9f7bdcadc4cf20f8958b78701cd6821c2ac3710c94cd975797558b0e0bd85",
+      "retained_rows": 2862,
+      "sha256": "d5ced2cb86bc88aa9b62b961187e03dbc8b3baac4fd1e210a57cd1939d3d4ae4",
+      "structural_excluded_rows": 44,
+      "structural_reason_counts": {
+        "sentence_word_label_disagreement": 34,
+        "uncovered_nonwhitespace_between_words": 2,
+        "word_not_found_in_order": 9
+      },
+      "structurally_eligible_classes": {
+        "benign": 1623,
+        "harmful": 1240
+      },
+      "token_eligible_classes_before_dedup": {
+        "benign": 1623,
+        "harmful": 1239
+      },
+      "token_excluded_rows": 1,
+      "token_reason_counts": {
+        "full_decode_roundtrip_mismatch": 1
+      }
+    },
+    "train": {
+      "deduplication_reason_counts": {
+        "split_priority_excluded": 2848
+      },
+      "eligible_input_tokens_before_dedup": 9804061,
+      "file_name": "FineHarm-train.json",
+      "outer_schema": {
+        "type": "list"
+      },
+      "raw_rows": 23269,
+      "raw_sentence_label_classes": {
+        "benign": 12997,
+        "harmful": 10272
+      },
+      "raw_word_label_classes": {
+        "benign": 13005,
+        "harmful": 10264
+      },
+      "retained_classes": {
+        "benign": 11046,
+        "harmful": 9104
+      },
+      "retained_input_tokens": 8715027,
+      "retained_response_tokens": 6679387,
+      "retained_row_ids_sha256": "f4ab8661d561e0849c58e6534f1598873c72501ada352337aae9f974f8e4b7d2",
+      "retained_rows": 20150,
+      "sha256": "5a843be240ee0d877ba748c253a8bb4655d60aa8400ca99b433313863c0bcc32",
+      "structural_excluded_rows": 267,
+      "structural_reason_counts": {
+        "sentence_word_label_disagreement": 197,
+        "uncovered_nonwhitespace_after_words": 17,
+        "uncovered_nonwhitespace_between_words": 30,
+        "word_not_found_in_order": 38
+      },
+      "structurally_eligible_classes": {
+        "benign": 12974,
+        "harmful": 10028
+      },
+      "token_eligible_classes_before_dedup": {
+        "benign": 12973,
+        "harmful": 10025
+      },
+      "token_excluded_rows": 4,
+      "token_reason_counts": {
+        "full_decode_roundtrip_mismatch": 4,
+        "uncovered_nonwhitespace_characters": 3
+      }
+    }
+  },
+  "tokenizer_file_sha256": {
+    "config.json": "b3bcfee86ed04c86e3c92000a2768d3c879564ac45e7e97909bce2e5767503cd",
+    "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+  }
+}
